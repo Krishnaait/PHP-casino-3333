@@ -481,7 +481,13 @@ include '../includes/header.php';
         // Calculate rotation
         const segmentAngle = (2 * Math.PI) / wheelNumbers.length;
         const spins = 5 + Math.random() * 3; // 5-8 full spins
-        const targetAngle = -(resultIndex * segmentAngle) + (spins * 2 * Math.PI);
+        
+        // Calculate target angle to align the segment center with the top pointer
+        // The pointer is at the top (0 degrees / -90 degrees from standard position)
+        // We need to rotate so the center of the target segment is at the top
+        const segmentCenterOffset = segmentAngle / 2;
+        const pointerAngle = -Math.PI / 2; // Top of the circle
+        const targetAngle = -(resultIndex * segmentAngle + segmentCenterOffset - pointerAngle) + (spins * 2 * Math.PI);
         targetRotation = currentRotation + targetAngle;
 
         // Animate wheel
