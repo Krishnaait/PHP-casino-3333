@@ -337,7 +337,7 @@ include '../includes/header.php';
             </p>
             <div class="highlight-box">
                 <strong>📧 Email:</strong> <a href="mailto:contact@casinoventures.com" style="color: var(--accent-green);">contact@casinoventures.com</a><br>
-                <strong>📍 Address:</strong> Gaming District, Digital City, DC 12345<br>
+                <strong>📍 Address:</strong> C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana<br>
                 <strong>⏰ Response Time:</strong> We aim to respond to all inquiries within 24-48 hours
             </div>
         </div>

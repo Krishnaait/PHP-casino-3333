@@ -293,7 +293,6 @@ include 'includes/header.php';
         </div>
 
         <div class="hero-badges">
-            <span class="badge"><i class="fas fa-check-circle"></i> Google Ads Compliant</span>
             <span class="badge"><i class="fas fa-shield-alt"></i> 18+ Only</span>
             <span class="badge"><i class="fas fa-coins"></i> Virtual Currency</span>
         </div>
@@ -377,7 +376,6 @@ include 'includes/header.php';
         <div class="feature-card">
             <div class="feature-icon">🔒</div>
             <h3 class="feature-title">Secure & Safe</h3>
-            <p class="feature-description">Google Ads compliant with strict age verification and responsible gaming.</p>
         </div>
 
         <div class="feature-card">

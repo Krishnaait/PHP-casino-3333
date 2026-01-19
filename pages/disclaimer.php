@@ -183,8 +183,8 @@ include '../includes/header.php';
 
         <!-- Compliance -->
         <div class="legal-section">
-            <h2><i class="fas fa-shield-alt"></i> Google Ads Policy Compliance</h2>
-            <p>Casino Ventures is fully compliant with Google Ads policies:</p>
+            <h2><i class="fas fa-shield-alt"></i> Platform Compliance</h2>
+            <p>Casino Ventures maintains the highest standards of compliance:</p>
             <ul>
                 <li>No real money gambling or betting</li>
                 <li>No circumvention or cloaking techniques</li>
@@ -226,7 +226,7 @@ include '../includes/header.php';
             <p>If you have any questions about this disclaimer or our platform, please contact us at:</p>
             <ul>
                 <li><strong>Email:</strong> contact@casinoventures.com</li>
-                <li><strong>Address:</strong> Gaming District, Digital City, DC 12345</li>
+                <li><strong>Address:</strong> C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana</li>
             </ul>
         </div>
 

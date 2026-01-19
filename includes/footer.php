@@ -44,10 +44,13 @@ if (!defined('COMPANY_NAME')) {
 
         <div class="footer-bottom">
             <div class="footer-compliance">
-                <p><i class="fas fa-shield-alt"></i> <strong>Google Ads Compliant</strong> - This platform is 100% free-to-play with virtual currency only. No real money transactions.</p>
+                <p><i class="fas fa-shield-alt"></i> This platform is 100% free-to-play with virtual currency only. No real money transactions.</p>
             </div>
             <div class="footer-copyright">
                 <p>&copy; <?php echo date('Y'); ?> <?php echo COMPANY_NAME; ?>. All rights reserved. | <a href="/pages/privacy.php">Privacy</a> | <a href="/pages/terms.php">Terms</a></p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: var(--spacing-sm);">
+                    CIN: <?php echo COMPANY_CIN; ?> | GST: <?php echo COMPANY_GST; ?> | PAN: <?php echo COMPANY_PAN; ?>
+                </p>
             </div>
         </div>
     </footer>

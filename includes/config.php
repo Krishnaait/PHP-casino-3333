@@ -2,7 +2,7 @@
 /**
  * Global Configuration File
  * Casino Website - Free-to-Play Social Gaming Platform
- * Google Ads Compliant - No Real Money Transactions
+ * * Free-to-Play Social Gaming Platform - No Real Money Transactions
  */
 
 // Start session if not already started
@@ -15,7 +15,10 @@ if (session_status() === PHP_SESSION_NONE) {
 // ============================================
 define('COMPANY_NAME', 'Casino Ventures');
 define('COMPANY_EMAIL', 'contact@casinoventures.com');
-define('COMPANY_ADDRESS', 'Gaming District, Digital City, DC 12345');
+define('COMPANY_ADDRESS', 'C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana');
+define('COMPANY_CIN', 'FIUGB4Y49595T8');
+define('COMPANY_GST', '7K99TDC34734');
+define('COMPANY_PAN', '098JBKC3252');
 
 // ============================================
 // GAME CONFIGURATION

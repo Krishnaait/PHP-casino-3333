@@ -246,7 +246,7 @@ include '../includes/header.php';
             <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
             <ul>
                 <li><strong>Email:</strong> contact@casinoventures.com</li>
-                <li><strong>Address:</strong> Gaming District, Digital City, DC 12345</li>
+                <li><strong>Address:</strong> C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana</li>
             </ul>
         </div>
 

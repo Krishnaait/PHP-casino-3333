@@ -253,8 +253,6 @@ include '../includes/header.php';
             <div class="compliance-item">
                 <i class="fas fa-check-circle"></i>
                 <div class="compliance-item-text">
-                    <strong>Google Ads Compliant</strong><br>
-                    Fully compliant with Google Ads policies and industry standards.
                 </div>
             </div>
             <div class="compliance-item">
