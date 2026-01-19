@@ -633,8 +633,12 @@ include '../includes/header.php';
     }
     
     document.addEventListener('DOMContentLoaded', function() {
+        resizeCanvas();
         drawPegs();
     });
+    
+    // Also resize on window resize
+    window.addEventListener('resize', resizeCanvas);
 </script>
 
 <?php include '../includes/footer.php'; ?>
