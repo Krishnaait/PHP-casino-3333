@@ -153,6 +153,7 @@ include 'includes/header.php';
         background: linear-gradient(135deg, transparent, rgba(0, 255, 0, 0.1));
         opacity: 0;
         transition: opacity var(--transition-normal);
+        pointer-events: none;
     }
 
     .game-card:hover {
