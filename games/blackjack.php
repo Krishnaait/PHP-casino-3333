@@ -449,7 +449,7 @@ include '../includes/header.php';
         playSound('click');
 
         if (score > 21) {
-            endGame(false);
+            endGame('bust', 0);
         }
     }
 
@@ -476,23 +476,32 @@ include '../includes/header.php';
 
         // Determine winner
         const playerScore = calculateScore(playerHand);
-        let won = false;
-        let multiplier = 1;
+        let result = 'lose';
+        let multiplier = 0;
 
         if (playerScore > 21) {
-            // Player bust
+            // Player bust - already lost bet
+            result = 'bust';
+            multiplier = 0;
         } else if (dealerScore > 21) {
-            // Dealer bust
-            won = true;
-            multiplier = 2;
+            // Dealer bust - player wins
+            result = 'win';
+            multiplier = 2; // Return bet + winnings
         } else if (playerScore > dealerScore) {
-            won = true;
-            multiplier = 2;
+            // Player has higher score
+            result = 'win';
+            multiplier = 2; // Return bet + winnings
         } else if (playerScore === dealerScore) {
-            multiplier = 1;
+            // Push - tie
+            result = 'push';
+            multiplier = 1; // Return bet only
+        } else {
+            // Dealer wins
+            result = 'lose';
+            multiplier = 0; // Lose bet
         }
 
-        endGame(won, multiplier);
+        endGame(result, multiplier);
     }
 
     async function doubleDown() {
@@ -514,23 +523,43 @@ include '../includes/header.php';
         document.getElementById('playerScore').textContent = score;
 
         if (score > 21) {
-            endGame(false);
+            endGame('bust', 0);
         } else {
             standGame();
         }
     }
 
-    async function endGame(won, multiplier = 1) {
+    async function endGame(result, multiplier = 0) {
         gameActive = false;
         document.getElementById('actionButtons').style.display = 'none';
         document.getElementById('dealBtn').style.display = 'block';
 
+        const playerScore = calculateScore(playerHand);
+        const dealerScore = calculateScore(dealerHand);
+        const isBlackjack = playerScore === 21 && playerHand.length === 2;
+        
         let winAmount = 0;
-        if (won) {
-            winAmount = betAmount * multiplier;
+        let displayAmount = 0;
+        
+        if (result === 'win') {
+            // Check for blackjack (pays 2.5x instead of 2x)
+            if (isBlackjack && dealerScore !== 21) {
+                winAmount = Math.floor(betAmount * 2.5);
+            } else {
+                winAmount = betAmount * multiplier;
+            }
             await balanceManager.updateAfterGame(winAmount);
+            displayAmount = winAmount - betAmount; // Show profit
             playSound('win');
+        } else if (result === 'push') {
+            // Return bet
+            winAmount = betAmount;
+            await balanceManager.updateAfterGame(winAmount);
+            displayAmount = 0; // No profit or loss
+            playSound('click');
         } else {
+            // Lost - bet already deducted
+            displayAmount = -betAmount;
             playSound('lose');
         }
 
@@ -538,16 +567,20 @@ include '../includes/header.php';
         const resultText = document.getElementById('resultText');
         const resultAmount = document.getElementById('resultAmount');
 
-        if (calculateScore(playerHand) > 21) {
-            resultText.textContent = 'BUST! You went over 21!';
-        } else if (calculateScore(dealerHand) > 21) {
-            resultText.textContent = 'Dealer BUST! You WIN!';
-        } else if (won) {
-            resultText.textContent = 'You WIN!';
-        } else if (calculateScore(playerHand) === calculateScore(dealerHand)) {
-            resultText.textContent = 'PUSH - Tie!';
+        if (result === 'bust') {
+            resultText.textContent = '💥 BUST! You went over 21!';
+        } else if (dealerScore > 21) {
+            resultText.textContent = '🎉 Dealer BUST! You WIN!';
+        } else if (result === 'push') {
+            resultText.textContent = '🤝 PUSH - It\'s a Tie!';
+        } else if (result === 'win') {
+            if (isBlackjack) {
+                resultText.textContent = '🃏 BLACKJACK! You WIN!';
+            } else {
+                resultText.textContent = '🎉 You WIN!';
+            }
         } else {
-            resultText.textContent = 'Dealer WINS!';
+            resultText.textContent = '😔 Dealer WINS!';
         }
 
         resultAmount.textContent = won ? `+${balanceManager.formatCurrency(winAmount)}` : `-${balanceManager.formatCurrency(betAmount)}`;
