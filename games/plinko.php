@@ -630,10 +630,19 @@ include '../includes/header.php';
         document.getElementById('dropButton').disabled = false;
     }
     
-    document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the game
+    function initGame() {
         resizeCanvas();
         drawPegs();
-    });
+    }
+    
+    // Call init when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGame);
+    } else {
+        // DOM is already loaded
+        initGame();
+    }
     
     // Also resize on window resize
     window.addEventListener('resize', resizeCanvas);
