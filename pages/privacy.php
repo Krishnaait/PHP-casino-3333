@@ -247,6 +247,9 @@ include '../includes/header.php';
             <ul>
                 <li><strong>Email:</strong> contact@casinoventures.com</li>
                 <li><strong>Address:</strong> C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana</li>
+                <li><strong>CIN:</strong> FIUGB4Y49595T8</li>
+                <li><strong>GST:</strong> 7K99TDC34734</li>
+                <li><strong>PAN:</strong> 098JBKC3252</li>
             </ul>
         </div>
 

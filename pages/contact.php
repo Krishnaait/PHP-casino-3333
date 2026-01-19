@@ -224,18 +224,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="info-card">
-                <div class="info-icon"><i class="fas fa-phone"></i></div>
-                <div class="info-title">Phone</div>
+                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-title">Address</div>
                 <div class="info-content">
-                    <a href="tel:+18008888888">+1-800-CASINO-1</a>
+                    C/O 58585 IEKEEN 20-0RHUSC<br>
+                    SEC-23A, Shivaji Nagar (Gurgaon)<br>
+                    RAJEEV CHOWK, Gurgaon- 122001<br>
+                    Haryana, India
                 </div>
             </div>
 
-                <div class="info-title">Address</div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-building"></i></div>
+                <div class="info-title">Company Registration</div>
                 <div class="info-content">
-                    Gaming District<br>
-                    Digital City, DC 12345<br>
-                    United States
+                    <strong>CIN:</strong> FIUGB4Y49595T8<br>
+                    <strong>GST:</strong> 7K99TDC34734<br>
+                    <strong>PAN:</strong> 098JBKC3252
                 </div>
             </div>
 
