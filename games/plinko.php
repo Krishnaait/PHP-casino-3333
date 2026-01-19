@@ -361,17 +361,15 @@ include '../includes/header.php';
         drawPegs();
     }
     
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    
     // Peg configuration
     const pegRows = 12;
-    const pegSpacing = canvas.width / 10;
+    let pegSpacing = 0;
     const pegs = [];
     
     // Create pegs in triangular pattern
     function createPegs() {
         pegs.length = 0;
+        pegSpacing = canvas.width / 10; // Calculate pegSpacing based on current canvas width
         const startY = 50;
         const rowHeight = (canvas.height - 100) / pegRows;
         
