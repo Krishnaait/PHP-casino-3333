@@ -24,8 +24,8 @@ $pageTitle = isset($page_title) ? $page_title : 'Casino Ventures';
     <title><?php echo $pageTitle; ?> - Casino Ventures</title>
     
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/casino-website/assets/css/global.css">
-    <link rel="stylesheet" href="/casino-website/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -62,24 +62,24 @@ $pageTitle = isset($page_title) ? $page_title : 'Casino Ventures';
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
-                <a href="/casino-website/index.php" class="brand-logo">
+                <a href="/index.php" class="brand-logo">
                     <i class="fas fa-dice-five"></i>
                     <span>Casino Ventures</span>
                 </a>
             </div>
 
             <div class="navbar-menu">
-                <a href="/casino-website/index.php" class="nav-link">Home</a>
-                <a href="/casino-website/pages/games.php" class="nav-link">Play Now</a>
-                <a href="/casino-website/pages/about.php" class="nav-link">About</a>
-                <a href="/casino-website/pages/contact.php" class="nav-link">Contact</a>
+                <a href="/index.php" class="nav-link">Home</a>
+                <a href="/pages/games.php" class="nav-link">Play Now</a>
+                <a href="/pages/about.php" class="nav-link">About</a>
+                <a href="/pages/contact.php" class="nav-link">Contact</a>
                 <div class="nav-dropdown">
                     <button class="nav-link dropdown-toggle">Legal <i class="fas fa-chevron-down"></i></button>
                     <div class="dropdown-menu">
-                        <a href="/casino-website/pages/terms.php" class="dropdown-item">Terms & Conditions</a>
-                        <a href="/casino-website/pages/privacy.php" class="dropdown-item">Privacy Policy</a>
-                        <a href="/casino-website/pages/disclaimer.php" class="dropdown-item">Disclaimer</a>
-                        <a href="/casino-website/pages/responsible-gaming.php" class="dropdown-item">Responsible Gaming</a>
+                        <a href="/pages/terms.php" class="dropdown-item">Terms & Conditions</a>
+                        <a href="/pages/privacy.php" class="dropdown-item">Privacy Policy</a>
+                        <a href="/pages/disclaimer.php" class="dropdown-item">Disclaimer</a>
+                        <a href="/pages/responsible-gaming.php" class="dropdown-item">Responsible Gaming</a>
                     </div>
                 </div>
             </div>

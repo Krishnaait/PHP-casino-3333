@@ -17,20 +17,20 @@ if (!defined('COMPANY_NAME')) {
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/casino-website/index.php">Home</a></li>
-                    <li><a href="/casino-website/pages/games.php">Games</a></li>
-                    <li><a href="/casino-website/pages/about.php">About</a></li>
-                    <li><a href="/casino-website/pages/contact.php">Contact</a></li>
+                    <li><a href="/index.php">Home</a></li>
+                    <li><a href="/pages/games.php">Games</a></li>
+                    <li><a href="/pages/about.php">About</a></li>
+                    <li><a href="/pages/contact.php">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="/casino-website/pages/terms.php">Terms & Conditions</a></li>
-                    <li><a href="/casino-website/pages/privacy.php">Privacy Policy</a></li>
-                    <li><a href="/casino-website/pages/disclaimer.php">Disclaimer</a></li>
-                    <li><a href="/casino-website/pages/responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="/pages/terms.php">Terms & Conditions</a></li>
+                    <li><a href="/pages/privacy.php">Privacy Policy</a></li>
+                    <li><a href="/pages/disclaimer.php">Disclaimer</a></li>
+                    <li><a href="/pages/responsible-gaming.php">Responsible Gaming</a></li>
                 </ul>
             </div>
 
@@ -47,14 +47,14 @@ if (!defined('COMPANY_NAME')) {
                 <p><i class="fas fa-shield-alt"></i> <strong>Google Ads Compliant</strong> - This platform is 100% free-to-play with virtual currency only. No real money transactions.</p>
             </div>
             <div class="footer-copyright">
-                <p>&copy; <?php echo date('Y'); ?> <?php echo COMPANY_NAME; ?>. All rights reserved. | <a href="/casino-website/pages/privacy.php">Privacy</a> | <a href="/casino-website/pages/terms.php">Terms</a></p>
+                <p>&copy; <?php echo date('Y'); ?> <?php echo COMPANY_NAME; ?>. All rights reserved. | <a href="/pages/privacy.php">Privacy</a> | <a href="/pages/terms.php">Terms</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="/casino-website/assets/js/main.js"></script>
-    <script src="/casino-website/assets/js/check-balance.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/check-balance.js"></script>
     
     <script>
         // Age verification
@@ -70,7 +70,7 @@ if (!defined('COMPANY_NAME')) {
                 });
 
                 ageVerifyBtn.addEventListener('click', function() {
-                    fetch('/casino-website/api/verify-age.php', {
+                    fetch('/api/verify-age.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

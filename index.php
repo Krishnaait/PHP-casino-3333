@@ -302,10 +302,10 @@ include 'includes/header.php';
         <h1>Experience Premium Casino Gaming</h1>
         <p>100% Free-to-Play Social Gaming Platform. No Real Money. Pure Entertainment.</p>
         <div class="hero-cta">
-            <a href="/casino-website/pages/games.php" class="btn btn-primary">
+            <a href="pages/games.php" class="btn btn-primary">
                 <i class="fas fa-play"></i> Play Now
             </a>
-            <a href="/casino-website/pages/about.php" class="btn btn-secondary">
+            <a href="pages/about.php" class="btn btn-secondary">
                 <i class="fas fa-info-circle"></i> Learn More
             </a>
         </div>
@@ -364,43 +364,43 @@ include 'includes/header.php';
             <div class="game-icon">🎲</div>
             <div class="game-name">Dice Game</div>
             <div class="game-description">Predict HIGH or LOW on two dice rolls</div>
-            <a href="/casino-website/games/dice.php" class="game-play-btn">Play Now</a>
+            <a href="games/dice.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">🐔</div>
             <div class="game-name">Chicken Adventure</div>
             <div class="game-description">Navigate the chicken to victory</div>
-            <a href="/casino-website/games/chicken.php" class="game-play-btn">Play Now</a>
+            <a href="games/chicken.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">💣</div>
             <div class="game-name">Mines</div>
             <div class="game-description">Reveal tiles without hitting mines</div>
-            <a href="/casino-website/games/mines.php" class="game-play-btn">Play Now</a>
+            <a href="games/mines.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">⚪</div>
             <div class="game-name">Plinko</div>
             <div class="game-description">Drop balls through pegs to win</div>
-            <a href="/casino-website/games/plinko.php" class="game-play-btn">Play Now</a>
+            <a href="games/plinko.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">🎰</div>
             <div class="game-name">Slot Machine</div>
             <div class="game-description">Classic slots with big wins</div>
-            <a href="/casino-website/games/slots.php" class="game-play-btn">Play Now</a>
+            <a href="games/slots.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">🎡</div>
             <div class="game-name">Roulette</div>
             <div class="game-description">Spin the wheel and win big</div>
-            <a href="/casino-website/games/roulette.php" class="game-play-btn">Play Now</a>
+            <a href="games/roulette.php" class="game-play-btn">Play Now</a>
         </div>
         <div class="game-card">
             <div class="game-icon">🃏</div>
             <div class="game-name">Blackjack</div>
             <div class="game-description">Beat the dealer with 21</div>
-            <a href="/casino-website/games/blackjack.php" class="game-play-btn">Play Now</a>
+            <a href="games/blackjack.php" class="game-play-btn">Play Now</a>
         </div>
     </div>
 </section>
@@ -433,7 +433,7 @@ include 'includes/header.php';
 <section class="cta-section">
     <h2>Ready to Play?</h2>
     <p>Join thousands of players enjoying premium casino games. Start with ₹10,000 virtual currency!</p>
-    <a href="/casino-website/pages/games.php" class="btn btn-primary" style="font-size: 1.1rem; padding: var(--spacing-lg) var(--spacing-2xl);">
+    <a href="pages/games.php" class="btn btn-primary" style="font-size: 1.1rem; padding: var(--spacing-lg) var(--spacing-2xl);">
         <i class="fas fa-play"></i> Start Playing Now
     </a>
 </section>

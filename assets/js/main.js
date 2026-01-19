@@ -98,11 +98,11 @@ function shuffleArray(array) {
  */
 function playSound(soundName) {
     const sounds = {
-        'win': '/casino-website/assets/audio/win.mp3',
-        'lose': '/casino-website/assets/audio/lose.mp3',
-        'click': '/casino-website/assets/audio/click.mp3',
-        'spin': '/casino-website/assets/audio/spin.mp3',
-        'jackpot': '/casino-website/assets/audio/jackpot.mp3'
+        'win': 'assets/audio/win.mp3',
+        'lose': 'assets/audio/lose.mp3',
+        'click': 'assets/audio/click.mp3',
+        'spin': 'assets/audio/spin.mp3',
+        'jackpot': 'assets/audio/jackpot.mp3'
     };
     
     if (sounds[soundName]) {
@@ -160,7 +160,7 @@ function updateBalanceDisplay(balance) {
  */
 async function fetchBalance() {
     try {
-        const response = await fetch('/casino-website/api/get-balance.php');
+        const response = await fetch('api/get-balance.php');
         const data = await response.json();
         if (data.success) {
             updateBalanceDisplay(data.balance);
@@ -176,7 +176,7 @@ async function fetchBalance() {
  */
 async function updateServerBalance(amount) {
     try {
-        const response = await fetch('/casino-website/api/update-balance.php', {
+        const response = await fetch('api/update-balance.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -202,7 +202,7 @@ async function updateServerBalance(amount) {
 async function resetBalance() {
     if (confirm('Are you sure you want to reset your balance to ₹10,000?')) {
         try {
-            const response = await fetch('/casino-website/api/reset-balance.php', {
+            const response = await fetch('api/reset-balance.php', {
                 method: 'POST'
             });
             const data = await response.json();

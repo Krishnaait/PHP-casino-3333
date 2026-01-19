@@ -239,7 +239,7 @@ include '../includes/header.php';
                         <span>Sound Effects</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/dice.php" class="game-play-link">Play Dice</a>
+                <a href="games/dice.php" class="game-play-link">Play Dice</a>
             </div>
         </div>
 
@@ -277,7 +277,7 @@ include '../includes/header.php';
                         <span>Physics Engine</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/chicken.php" class="game-play-link">Play Chicken</a>
+                <a href="games/chicken.php" class="game-play-link">Play Chicken</a>
             </div>
         </div>
 
@@ -315,7 +315,7 @@ include '../includes/header.php';
                         <span>Strategic Gameplay</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/mines.php" class="game-play-link">Play Mines</a>
+                <a href="games/mines.php" class="game-play-link">Play Mines</a>
             </div>
         </div>
 
@@ -353,7 +353,7 @@ include '../includes/header.php';
                         <span>Smooth Animation</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/plinko.php" class="game-play-link">Play Plinko</a>
+                <a href="games/plinko.php" class="game-play-link">Play Plinko</a>
             </div>
         </div>
 
@@ -391,7 +391,7 @@ include '../includes/header.php';
                         <span>Unique Audio</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/slots.php" class="game-play-link">Play Slots</a>
+                <a href="games/slots.php" class="game-play-link">Play Slots</a>
             </div>
         </div>
 
@@ -429,7 +429,7 @@ include '../includes/header.php';
                         <span>Real-Time Odds</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/roulette.php" class="game-play-link">Play Roulette</a>
+                <a href="games/roulette.php" class="game-play-link">Play Roulette</a>
             </div>
         </div>
 
@@ -467,7 +467,7 @@ include '../includes/header.php';
                         <span>Card Counting</span>
                     </div>
                 </div>
-                <a href="/casino-website/games/blackjack.php" class="game-play-link">Play Blackjack</a>
+                <a href="games/blackjack.php" class="game-play-link">Play Blackjack</a>
             </div>
         </div>
     </div>
