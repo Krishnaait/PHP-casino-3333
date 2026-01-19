@@ -345,7 +345,6 @@ include '../includes/header.php';
                     <button class="preset-btn" onclick="setBet(1000)">₹1K</button>
                     <button class="preset-btn" onclick="setBet(2000)">₹2K</button>
                     <button class="preset-btn" onclick="setBet(5500)">₹5.5K</button>
-                    <button class="preset-btn" onclick="setBet('max')">MAX</button>
                 </div>
             </div>
 

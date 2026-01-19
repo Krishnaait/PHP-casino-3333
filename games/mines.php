@@ -145,6 +145,17 @@ include '../includes/header.php';
         font-size: 1rem;
     }
 
+    .control-select option {
+        background: var(--primary-darker);
+        color: var(--text-primary);
+        padding: var(--spacing-md);
+    }
+
+    .control-select option:hover {
+        background: var(--accent-green);
+        color: var(--primary-dark);
+    }
+
     .control-input:focus, .control-select:focus {
         outline: none;
         border-color: var(--accent-gold);
@@ -301,7 +312,6 @@ include '../includes/header.php';
                     <button class="preset-btn" onclick="setBet(1000)">₹1K</button>
                     <button class="preset-btn" onclick="setBet(2000)">₹2K</button>
                     <button class="preset-btn" onclick="setBet(5500)">₹5.5K</button>
-                    <button class="preset-btn" onclick="setBet('max')">MAX</button>
                 </div>
             </div>
 

@@ -160,7 +160,7 @@ function updateBalanceDisplay(balance) {
  */
 async function fetchBalance() {
     try {
-        const response = await fetch('api/get-balance.php');
+        const response = await fetch('/api/get-balance.php');
         const data = await response.json();
         if (data.success) {
             updateBalanceDisplay(data.balance);
@@ -202,7 +202,7 @@ async function updateServerBalance(amount) {
 async function resetBalance() {
     if (confirm('Are you sure you want to reset your balance to ₹10,000?')) {
         try {
-            const response = await fetch('api/reset-balance.php', {
+            const response = await fetch('/api/reset-balance.php', {
                 method: 'POST'
             });
             const data = await response.json();

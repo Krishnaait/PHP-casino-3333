@@ -26,7 +26,7 @@ class BalanceManager {
      */
     async fetchBalance() {
         try {
-            const response = await fetch('api/get-balance.php');
+            const response = await fetch('/api/get-balance.php');
             const data = await response.json();
             
             if (data.success) {
@@ -128,7 +128,7 @@ class BalanceManager {
      */
     async updateAfterGame(winAmount) {
         try {
-            const response = await fetch('api/update-balance.php', {
+            const response = await fetch('/api/update-balance.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
