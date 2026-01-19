@@ -89,33 +89,39 @@ class BalanceManager {
     }
 
     /**
-     * Check if balance is zero
+     * Check if balance is zero or below minimum bet
      */
     checkZeroBalance() {
-        if (this.currentBalance <= 0) {
-            this.showZeroBalanceModal();
+        const MIN_BET = 200;
+        if (this.currentBalance < MIN_BET) {
+            this.showLowBalanceModal();
         }
     }
 
     /**
-     * Show zero balance modal
+     * Show low balance modal when balance < minimum bet
      */
-    showZeroBalanceModal() {
+    showLowBalanceModal() {
+        // Prevent multiple modals
+        if (document.querySelector('.low-balance-modal')) return;
+        
         const modal = document.createElement('div');
-        modal.className = 'modal-overlay active';
+        modal.className = 'modal-overlay active low-balance-modal';
         modal.innerHTML = `
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Out of Balance!</h2>
-                    <p class="disclaimer-text">Your balance has reached zero</p>
+                    <h2>⚠️ Insufficient Balance!</h2>
+                    <p class="disclaimer-text">Your balance is below the minimum bet amount</p>
                 </div>
                 <div class="modal-body">
-                    <p>You've run out of virtual currency! Reset your balance to continue playing.</p>
+                    <p>Your current balance is <strong>${this.formatCurrency(this.currentBalance)}</strong></p>
+                    <p>Minimum bet required: <strong>₹200</strong></p>
+                    <p>Reset your balance to continue playing!</p>
                     <p><strong>Remember:</strong> This is a FREE-TO-PLAY platform. You can reset your balance anytime!</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" onclick="resetBalance(); this.closest('.modal-overlay').remove();">
-                        Reset Balance
+                        🔄 Reset Balance to ₹10,000
                     </button>
                 </div>
             </div>

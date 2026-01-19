@@ -422,12 +422,12 @@ include '../includes/header.php';
         constructor(startX) {
             this.x = startX;
             this.y = 20;
-            this.vx = (Math.random() - 0.5) * 0.5; // Very slow initial horizontal velocity
+            this.vx = (Math.random() - 0.5) * 0.5; // Slow initial horizontal velocity
             this.vy = 0;
             this.radius = 12; // Larger ball for better visibility
-            this.gravity = 0.2; // Much slower gravity for dramatic fall
+            this.gravity = 0.25; // Balanced gravity - visible but not too slow
             this.bounce = 0.5; // Less bouncy for smoother animation
-            this.friction = 0.96; // High friction for controlled movement
+            this.friction = 0.97; // Balanced friction for smooth movement
         }
         
         update() {
