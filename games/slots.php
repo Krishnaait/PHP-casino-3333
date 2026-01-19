@@ -47,7 +47,7 @@ include '../includes/header.php';
         background: rgba(0, 0, 0, 0.5);
         border: 2px solid var(--accent-green);
         border-radius: var(--radius-md);
-        height: 200px;
+        height: 280px;
         overflow: hidden;
         position: relative;
     }
@@ -238,7 +238,7 @@ include '../includes/header.php';
         }
 
         .reel {
-            height: 120px;
+            height: 180px;
         }
 
         .reel-symbol {
@@ -413,10 +413,10 @@ include '../includes/header.php';
         reel2.classList.remove('spinning');
         reel3.classList.remove('spinning');
 
-        // Set final positions
-        reel1.querySelector('.reel-content').style.transform = `translateY(-${result1 * 50}px)`;
-        reel2.querySelector('.reel-content').style.transform = `translateY(-${result2 * 50}px)`;
-        reel3.querySelector('.reel-content').style.transform = `translateY(-${result3 * 50}px)`;
+        // Set final positions (70px per row for 4 rows = 280px total height)
+        reel1.querySelector('.reel-content').style.transform = `translateY(-${result1 * 70}px)`;
+        reel2.querySelector('.reel-content').style.transform = `translateY(-${result2 * 70}px)`;
+        reel3.querySelector('.reel-content').style.transform = `translateY(-${result3 * 70}px)`;
 
         // Check for wins
         let multiplier = 0;
@@ -458,9 +458,13 @@ include '../includes/header.php';
         const popup = document.getElementById('bigWinPopup');
         document.getElementById('bigWinAmount').textContent = balanceManager.formatCurrency(amount);
         popup.style.display = 'block';
+        popup.style.transform = 'translate(-50%, -50%) scale(1)';
 
         setTimeout(() => {
-            popup.style.display = 'none';
+            popup.style.transform = 'translate(-50%, -50%) scale(0)';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 500);
         }, 3000);
     }
 

@@ -15,7 +15,6 @@ if (session_status() === PHP_SESSION_NONE) {
 // ============================================
 define('COMPANY_NAME', 'Casino Ventures');
 define('COMPANY_EMAIL', 'contact@casinoventures.com');
-define('COMPANY_PHONE', '+1-800-CASINO-1');
 define('COMPANY_ADDRESS', 'Gaming District, Digital City, DC 12345');
 
 // ============================================

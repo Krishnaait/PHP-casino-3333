@@ -234,7 +234,6 @@ include '../includes/header.php';
             <p>If you have questions about responsible gaming or need support, please contact us:</p>
             <ul>
                 <li><strong>Email:</strong> contact@casinoventures.com</li>
-                <li><strong>Phone:</strong> +1-800-CASINO-1</li>
                 <li><strong>Address:</strong> Gaming District, Digital City, DC 12345</li>
             </ul>
         </div>

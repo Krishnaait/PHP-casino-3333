@@ -31,13 +31,13 @@ if (!defined('COMPANY_NAME')) {
                     <li><a href="/pages/privacy.php">Privacy Policy</a></li>
                     <li><a href="/pages/disclaimer.php">Disclaimer</a></li>
                     <li><a href="/pages/responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="/pages/fair-policy.php">Fair Policy</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>Email: <a href="mailto:<?php echo COMPANY_EMAIL; ?>"><?php echo COMPANY_EMAIL; ?></a></p>
-                <p>Phone: <a href="tel:<?php echo COMPANY_PHONE; ?>"><?php echo COMPANY_PHONE; ?></a></p>
                 <p><?php echo COMPANY_ADDRESS; ?></p>
             </div>
         </div>

@@ -246,7 +246,6 @@ include '../includes/header.php';
             <p>For questions about these terms, please contact:</p>
             <ul>
                 <li><strong>Email:</strong> contact@casinoventures.com</li>
-                <li><strong>Phone:</strong> +1-800-CASINO-1</li>
                 <li><strong>Address:</strong> Gaming District, Digital City, DC 12345</li>
             </ul>
         </div>

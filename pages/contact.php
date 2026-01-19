@@ -231,8 +231,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <div class="info-card">
-                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-title">Address</div>
                 <div class="info-content">
                     Gaming District<br>

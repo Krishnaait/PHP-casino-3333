@@ -28,75 +28,55 @@ include '../includes/header.php';
     }
 
     .plinko-board {
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-        border: 2px solid var(--accent-green);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+        border: 3px solid var(--accent-gold);
         border-radius: var(--radius-lg);
-        padding: var(--spacing-xl);
+        padding: var(--spacing-lg);
         margin: var(--spacing-lg) 0;
         position: relative;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
 
-    .plinko-pegs {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        align-items: center;
-        flex: 1;
-    }
-
-    .peg-row {
-        display: flex;
-        gap: var(--spacing-lg);
-        justify-content: center;
-    }
-
-    .peg {
-        width: 20px;
-        height: 20px;
-        background: var(--accent-gold);
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    #plinkoCanvas {
+        width: 100%;
+        height: 500px;
+        border-radius: var(--radius-md);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
     }
 
     .plinko-slots {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: var(--spacing-sm);
-        margin-top: var(--spacing-lg);
+        grid-template-columns: repeat(9, 1fr);
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-md);
     }
 
     .slot {
         background: rgba(255, 215, 0, 0.1);
         border: 2px solid var(--accent-gold);
-        border-radius: var(--radius-md);
-        padding: var(--spacing-md);
+        border-radius: var(--radius-sm);
+        padding: var(--spacing-sm);
         text-align: center;
         color: var(--accent-gold);
         font-weight: 700;
-        font-size: 0.9rem;
-        min-height: 50px;
+        font-size: 0.85rem;
+        min-height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all var(--transition-fast);
     }
 
     .slot.active {
         background: linear-gradient(135deg, var(--accent-gold), #ffed4e);
         color: var(--primary-dark);
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        transform: scale(1.1);
+        animation: slotPulse 0.5s ease;
     }
 
-    .ball {
-        width: 15px;
-        height: 15px;
-        background: radial-gradient(circle at 30% 30%, #ffff00, #ff6600);
-        border-radius: 50%;
-        position: absolute;
-        box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+    @keyframes slotPulse {
+        0%, 100% { transform: scale(1.1); }
+        50% { transform: scale(1.2); }
     }
 
     .game-stats {
@@ -144,7 +124,7 @@ include '../includes/header.php';
         font-weight: 600;
     }
 
-    .control-input, .control-select {
+    .control-input {
         width: 100%;
         padding: var(--spacing-md);
         background: rgba(255, 255, 255, 0.05);
@@ -152,40 +132,35 @@ include '../includes/header.php';
         border-radius: var(--radius-md);
         color: var(--text-primary);
         font-size: 1rem;
-    }
-
-    .control-input:focus, .control-select:focus {
-        outline: none;
-        border-color: var(--accent-gold);
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        text-align: center;
     }
 
     .bet-presets {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: var(--spacing-sm);
         margin-top: var(--spacing-sm);
     }
 
     .preset-btn {
         padding: var(--spacing-sm);
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--radius-md);
-        color: var(--text-primary);
-        font-size: 0.85rem;
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid var(--accent-gold);
+        color: var(--accent-gold);
+        border-radius: var(--radius-sm);
         cursor: pointer;
         transition: all var(--transition-fast);
+        font-weight: 600;
     }
 
     .preset-btn:hover {
-        background: rgba(255, 215, 0, 0.2);
-        border-color: var(--accent-gold);
+        background: var(--accent-gold);
+        color: var(--primary-dark);
+        transform: scale(1.05);
     }
 
     .action-buttons {
         display: grid;
-        grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
 
@@ -194,23 +169,24 @@ include '../includes/header.php';
         border: none;
         border-radius: var(--radius-md);
         font-weight: 700;
+        font-size: 1.1rem;
         cursor: pointer;
         transition: all var(--transition-fast);
         text-transform: uppercase;
-        font-size: 0.9rem;
+        letter-spacing: 1px;
     }
 
     .start-btn {
-        background: linear-gradient(135deg, var(--accent-gold) 0%, #ffed4e 100%);
+        background: linear-gradient(135deg, var(--accent-green), #00cc00);
         color: var(--primary-dark);
     }
 
     .start-btn:hover:not(:disabled) {
         transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     }
 
-    .action-btn:disabled {
+    .start-btn:disabled {
         opacity: 0.5;
         cursor: not-allowed;
     }
@@ -233,6 +209,7 @@ include '../includes/header.php';
         font-weight: 700;
         margin-bottom: var(--spacing-md);
         text-align: center;
+        font-size: 1.1rem;
     }
 
     .stat-row {
@@ -241,7 +218,6 @@ include '../includes/header.php';
         padding: var(--spacing-sm) 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         color: var(--text-secondary);
-        font-size: 0.9rem;
     }
 
     .stat-row:last-child {
@@ -258,19 +234,30 @@ include '../includes/header.php';
             grid-template-columns: 1fr;
         }
 
-        .plinko-board {
-            height: 300px;
+        #plinkoCanvas {
+            height: 400px;
         }
 
         .plinko-slots {
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(9, 1fr);
+            gap: 2px;
+        }
+
+        .slot {
+            font-size: 0.7rem;
+            padding: var(--spacing-xs);
+            min-height: 35px;
+        }
+
+        .bet-presets {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 </style>
 
 <div class="game-wrapper">
     <div class="game-area">
-        <h1 class="game-title"><i class="fas fa-circle"></i> Plinko</h1>
+        <h1 class="game-title">🎱 Plinko</h1>
 
         <div class="game-stats">
             <div class="stat-card">
@@ -282,56 +269,24 @@ include '../includes/header.php';
                 <div class="stat-value" id="totalBalls">0</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Total Win</div>
+                <div class="stat-label">Total Won</div>
                 <div class="stat-value" id="totalWinAmount">₹0</div>
             </div>
         </div>
 
-        <div class="plinko-board" id="plinkoBoard">
-            <div class="plinko-pegs">
-                <div class="peg-row">
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                </div>
-                <div class="peg-row">
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                </div>
-                <div class="peg-row">
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                </div>
-                <div class="peg-row">
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                    <div class="peg"></div>
-                </div>
-            </div>
-
+        <div class="plinko-board">
+            <canvas id="plinkoCanvas"></canvas>
+            
             <div class="plinko-slots">
-                <div class="slot" data-multiplier="1">1x</div>
-                <div class="slot" data-multiplier="2">2x</div>
-                <div class="slot" data-multiplier="3">3x</div>
                 <div class="slot" data-multiplier="5">5x</div>
-                <div class="slot" data-multiplier="3">3x</div>
                 <div class="slot" data-multiplier="2">2x</div>
+                <div class="slot" data-multiplier="1.5">1.5x</div>
                 <div class="slot" data-multiplier="1">1x</div>
                 <div class="slot" data-multiplier="0.5">0.5x</div>
+                <div class="slot" data-multiplier="1">1x</div>
+                <div class="slot" data-multiplier="1.5">1.5x</div>
+                <div class="slot" data-multiplier="2">2x</div>
+                <div class="slot" data-multiplier="5">5x</div>
             </div>
         </div>
 
@@ -362,7 +317,7 @@ include '../includes/header.php';
                 <span class="stat-row-value" id="totalDrops">0</span>
             </div>
             <div class="stat-row">
-                <span>Average Multiplier</span>
+                <span>Avg Multiplier</span>
                 <span class="stat-row-value" id="avgMultiplier">0x</span>
             </div>
             <div class="stat-row">
@@ -378,11 +333,11 @@ include '../includes/header.php';
         <div class="stats-card">
             <div class="stats-title"><i class="fas fa-info-circle"></i> How to Play</div>
             <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin: 0;">
-                🎱 Drop balls down the board<br>
-                ⚪ Balls bounce off pegs<br>
-                🎯 Land in slots for multipliers<br>
-                💰 Higher multiplier = bigger win<br>
-                📊 Drop multiple balls for more wins
+                🎱 Drop the ball from top<br>
+                ⚪ Ball bounces off pegs<br>
+                🎯 Lands in multiplier slot<br>
+                💰 Win based on multiplier<br>
+                🌟 Edge slots = Higher multipliers!
             </p>
         </div>
     </div>
@@ -390,68 +345,264 @@ include '../includes/header.php';
 
 <script>
     let isDropping = false;
-    let totalDrops = 0;
     let multipliers = [];
+    let totalDrops = 0;
     let totalWinAmount = 0;
-
+    
+    // Canvas setup
+    const canvas = document.getElementById('plinkoCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        drawPegs();
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    // Peg configuration
+    const pegRows = 12;
+    const pegSpacing = canvas.width / 10;
+    const pegs = [];
+    
+    // Create pegs in triangular pattern
+    function createPegs() {
+        pegs.length = 0;
+        const startY = 50;
+        const rowHeight = (canvas.height - 100) / pegRows;
+        
+        for (let row = 0; row < pegRows; row++) {
+            const pegsInRow = row + 3;
+            const rowWidth = pegsInRow * pegSpacing;
+            const startX = (canvas.width - rowWidth) / 2 + pegSpacing / 2;
+            
+            for (let col = 0; col < pegsInRow; col++) {
+                pegs.push({
+                    x: startX + col * pegSpacing,
+                    y: startY + row * rowHeight,
+                    radius: 6
+                });
+            }
+        }
+    }
+    
+    // Draw pegs
+    function drawPegs() {
+        createPegs();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        pegs.forEach(peg => {
+            // Peg glow
+            const gradient = ctx.createRadialGradient(peg.x, peg.y, 0, peg.x, peg.y, peg.radius * 2);
+            gradient.addColorStop(0, 'rgba(255, 215, 0, 0.8)');
+            gradient.addColorStop(1, 'rgba(255, 215, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(peg.x, peg.y, peg.radius * 2, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Peg body
+            ctx.fillStyle = '#FFD700';
+            ctx.beginPath();
+            ctx.arc(peg.x, peg.y, peg.radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Peg highlight
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.beginPath();
+            ctx.arc(peg.x - 2, peg.y - 2, peg.radius / 2, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+    
+    // Ball class
+    class Ball {
+        constructor(startX) {
+            this.x = startX;
+            this.y = 20;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = 0;
+            this.radius = 8;
+            this.gravity = 0.5;
+            this.bounce = 0.7;
+            this.friction = 0.99;
+        }
+        
+        update() {
+            // Apply gravity
+            this.vy += this.gravity;
+            
+            // Apply velocity
+            this.x += this.vx;
+            this.y += this.vy;
+            
+            // Apply friction
+            this.vx *= this.friction;
+            
+            // Check collision with pegs
+            pegs.forEach(peg => {
+                const dx = this.x - peg.x;
+                const dy = this.y - peg.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < this.radius + peg.radius) {
+                    // Collision detected
+                    const angle = Math.atan2(dy, dx);
+                    const targetX = peg.x + Math.cos(angle) * (peg.radius + this.radius);
+                    const targetY = peg.y + Math.sin(angle) * (peg.radius + this.radius);
+                    
+                    // Bounce
+                    const ax = targetX - this.x;
+                    const ay = targetY - this.y;
+                    
+                    this.vx -= ax * 0.5;
+                    this.vy -= ay * 0.5;
+                    
+                    // Add some randomness
+                    this.vx += (Math.random() - 0.5) * 3;
+                    
+                    // Move ball out of collision
+                    this.x = targetX;
+                    this.y = targetY;
+                }
+            });
+            
+            // Wall collision
+            if (this.x < this.radius) {
+                this.x = this.radius;
+                this.vx *= -this.bounce;
+            }
+            if (this.x > canvas.width - this.radius) {
+                this.x = canvas.width - this.radius;
+                this.vx *= -this.bounce;
+            }
+            
+            // Check if reached bottom
+            if (this.y > canvas.height - 20) {
+                return true; // Ball finished
+            }
+            
+            return false;
+        }
+        
+        draw() {
+            // Ball glow
+            const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 2);
+            gradient.addColorStop(0, 'rgba(255, 102, 0, 0.8)');
+            gradient.addColorStop(1, 'rgba(255, 102, 0, 0)');
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius * 2, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Ball body
+            const ballGradient = ctx.createRadialGradient(
+                this.x - this.radius / 3,
+                this.y - this.radius / 3,
+                0,
+                this.x,
+                this.y,
+                this.radius
+            );
+            ballGradient.addColorStop(0, '#FFFF00');
+            ballGradient.addColorStop(1, '#FF6600');
+            ctx.fillStyle = ballGradient;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Ball highlight
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.beginPath();
+            ctx.arc(this.x - 3, this.y - 3, this.radius / 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    
     function setBet(amount) {
         if (isDropping) return;
         playSound('click');
-        
-        let betValue = amount;
-        if (amount === 'max') {
-            const balance = balanceManager.getBalance();
-            betValue = Math.min(balance, 5500);
-        }
-        
-        document.getElementById('betAmount').value = betValue;
+        document.getElementById('betAmount').value = amount;
     }
-
+    
     async function dropBall() {
         if (isDropping) return;
         
         const betAmount = parseInt(document.getElementById('betAmount').value) || 0;
         const validation = balanceManager.validateBet(betAmount);
-
+        
         if (!validation.valid) {
             showToast(validation.error, 'error');
             return;
         }
-
+        
         isDropping = true;
         document.getElementById('dropButton').disabled = true;
-
+        
         // Deduct bet
         await balanceManager.updateAfterGame(-betAmount);
-
+        
         playSound('click');
-
-        // Simulate ball drop
+        
+        // Create ball at random starting position
+        const startX = canvas.width / 2 + (Math.random() - 0.5) * 40;
+        const ball = new Ball(startX);
+        
+        // Animate ball
+        let animationFrame;
+        const animate = () => {
+            // Redraw pegs
+            drawPegs();
+            
+            // Update and draw ball
+            const finished = ball.update();
+            ball.draw();
+            
+            if (!finished) {
+                animationFrame = requestAnimationFrame(animate);
+            } else {
+                // Ball reached bottom - determine slot
+                const slotWidth = canvas.width / 9;
+                const slotIndex = Math.floor(ball.x / slotWidth);
+                const clampedIndex = Math.max(0, Math.min(8, slotIndex));
+                
+                finishDrop(clampedIndex, betAmount);
+            }
+        };
+        
+        animate();
+    }
+    
+    async function finishDrop(slotIndex, betAmount) {
         const slots = document.querySelectorAll('.slot');
-        const randomSlot = slots[Math.floor(Math.random() * slots.length)];
-        const multiplier = parseFloat(randomSlot.dataset.multiplier);
-
+        const slot = slots[slotIndex];
+        const multiplier = parseFloat(slot.dataset.multiplier);
+        
         // Animate slot
-        randomSlot.classList.add('active');
+        slot.classList.add('active');
         setTimeout(() => {
-            randomSlot.classList.remove('active');
+            slot.classList.remove('active');
         }, 1000);
-
+        
         // Calculate winnings
         const winAmount = Math.floor(betAmount * multiplier);
-        if (multiplier > 0) {
+        if (winAmount > betAmount) {
             await balanceManager.updateAfterGame(winAmount);
         }
-
+        
         // Update stats
         multipliers.push(multiplier);
         totalDrops++;
-        totalWinAmount += winAmount;
-
+        totalWinAmount += (winAmount - betAmount);
+        
         const avgMult = (multipliers.reduce((a, b) => a + b, 0) / multipliers.length).toFixed(2);
         const bestMult = Math.max(...multipliers).toFixed(2);
         const worstMult = Math.min(...multipliers).toFixed(2);
-
+        
         document.getElementById('lastMultiplier').textContent = multiplier + 'x';
         document.getElementById('totalBalls').textContent = totalDrops;
         document.getElementById('totalWinAmount').textContent = balanceManager.formatCurrency(totalWinAmount);
@@ -459,22 +610,22 @@ include '../includes/header.php';
         document.getElementById('avgMultiplier').textContent = avgMult + 'x';
         document.getElementById('bestMultiplier').textContent = bestMult + 'x';
         document.getElementById('worstMultiplier').textContent = worstMult + 'x';
-
+        
         // Show result
-        if (multiplier > 0) {
+        if (multiplier >= 1) {
             playSound('win');
-            showToast(`🎯 Hit ${multiplier}x slot! +${balanceManager.formatCurrency(winAmount)}`, 'success');
+            showToast(`🎯 Hit ${multiplier}x slot! +${balanceManager.formatCurrency(winAmount - betAmount)}`, 'success');
         } else {
             playSound('lose');
-            showToast(`💥 Hit 0.5x slot. -${balanceManager.formatCurrency(betAmount - winAmount)}`, 'warning');
+            showToast(`💥 Hit ${multiplier}x slot. ${balanceManager.formatCurrency(winAmount - betAmount)}`, 'warning');
         }
-
+        
         isDropping = false;
         document.getElementById('dropButton').disabled = false;
     }
-
+    
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize
+        drawPegs();
     });
 </script>
 

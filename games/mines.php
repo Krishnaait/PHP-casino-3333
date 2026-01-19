@@ -455,6 +455,21 @@ include '../includes/header.php';
         tile.classList.add('revealed');
         playSound('click');
         
+        // SAFE FIRST CLICK: If first click hits a mine, move it
+        if (safeTilesFound === 0 && minePositions.includes(index)) {
+            // Remove mine from clicked position
+            minePositions = minePositions.filter(pos => pos !== index);
+            
+            // Find a new random position that doesn't have a mine
+            let newPos;
+            do {
+                newPos = Math.floor(Math.random() * 25);
+            } while (minePositions.includes(newPos) || newPos === index);
+            
+            // Place mine in new position
+            minePositions.push(newPos);
+        }
+        
         if (minePositions.includes(index)) {
             // Hit a mine - game over
             playSound('lose');
