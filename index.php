@@ -1,4 +1,5 @@
 <?php
+// Force redeploy - Fix Play Now buttons
 $page_title = "Home - Casino Ventures";
 include 'includes/header.php';
 ?>
