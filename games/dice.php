@@ -323,8 +323,11 @@ include '../includes/header.php';
         isPlaying = true;
         document.getElementById('playBtn').disabled = true;
 
-        // Deduct bet from balance
-        await balanceManager.updateAfterGame(-betAmount);
+        // Show bet placed message
+        showToast(`You bet ${balanceManager.formatCurrency(betAmount)}`, 'info');
+
+        // Deduct bet from balance (without showing message)
+        await balanceManager.updateAfterGame(-betAmount, false);
 
         // Animate dice rolling
         const dice1 = document.getElementById('dice1');
@@ -357,12 +360,12 @@ include '../includes/header.php';
         let winAmount = 0;
         if (won) {
             winAmount = betAmount * 2;
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
             playSound('win');
             showToast(`You won ${balanceManager.formatCurrency(winAmount)}!`, 'success');
         } else {
             playSound('lose');
-            showToast('Better luck next time!', 'error');
+            showToast(`You lost ${balanceManager.formatCurrency(betAmount)}!`, 'error');
         }
 
         // Show result

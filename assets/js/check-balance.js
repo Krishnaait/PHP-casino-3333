@@ -126,7 +126,7 @@ class BalanceManager {
     /**
      * Update balance after game
      */
-    async updateAfterGame(winAmount) {
+    async updateAfterGame(winAmount, showMessage = true) {
         try {
             const response = await fetch('/api/update-balance.php', {
                 method: 'POST',
@@ -141,10 +141,13 @@ class BalanceManager {
                 this.currentBalance = data.new_balance;
                 this.updateDisplay();
                 
-                if (winAmount > 0) {
-                    showToast(`You won ${this.formatCurrency(winAmount)}!`, 'success');
-                } else if (winAmount < 0) {
-                    showToast(`You lost ${this.formatCurrency(Math.abs(winAmount))}`, 'error');
+                // Only show messages if showMessage is true
+                if (showMessage) {
+                    if (winAmount > 0) {
+                        showToast(`You won ${this.formatCurrency(winAmount)}!`, 'success');
+                    } else if (winAmount < 0) {
+                        showToast(`You bet ${this.formatCurrency(Math.abs(winAmount))}`, 'info');
+                    }
                 }
                 
                 this.checkZeroBalance();

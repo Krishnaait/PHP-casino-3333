@@ -543,8 +543,11 @@ include '../includes/header.php';
         isDropping = true;
         document.getElementById('dropButton').disabled = true;
         
-        // Deduct bet
-        await balanceManager.updateAfterGame(-betAmount);
+        // Show bet placed message
+        showToast(`You bet ${balanceManager.formatCurrency(betAmount)}`, 'info');
+        
+        // Deduct bet (without showing message)
+        await balanceManager.updateAfterGame(-betAmount, false);
         
         playSound('click');
         
@@ -591,7 +594,12 @@ include '../includes/header.php';
         // Calculate winnings
         const winAmount = Math.floor(betAmount * multiplier);
         if (winAmount > betAmount) {
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
+            showToast(`You won ${balanceManager.formatCurrency(winAmount)}! (${multiplier}x)`, 'success');
+        } else if (winAmount < betAmount) {
+            showToast(`You lost ${balanceManager.formatCurrency(betAmount - winAmount)}! (${multiplier}x)`, 'error');
+        } else {
+            showToast(`Break even! (${multiplier}x)`, 'info');
         }
         
         // Update stats

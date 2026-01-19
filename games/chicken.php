@@ -415,8 +415,11 @@ include '../includes/header.php';
 
         playSound('click');
         
-        // Deduct bet
-        await balanceManager.updateAfterGame(-betAmount);
+        // Show bet placed message
+        showToast(`You bet ${balanceManager.formatCurrency(betAmount)}`, 'info');
+        
+        // Deduct bet (without showing message)
+        await balanceManager.updateAfterGame(-betAmount, false);
 
         const difficulty = document.getElementById('difficulty').value;
         
@@ -511,10 +514,10 @@ include '../includes/header.php';
         let winAmount = 0;
         if (won && eggsCollected > 0) {
             winAmount = Math.floor(currentBet * currentMultiplier);
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
             showToast(`🎉 YOU WIN! Found ${eggsCollected} eggs! +${balanceManager.formatCurrency(winAmount)}`, 'success');
         } else {
-            showToast(`🦴 GAME OVER! Found ${eggsCollected} eggs. -${balanceManager.formatCurrency(currentBet)}`, 'error');
+            showToast(`🦴 You lost ${balanceManager.formatCurrency(currentBet)}! Found ${eggsCollected} eggs.`, 'error');
         }
         
         // Update stats

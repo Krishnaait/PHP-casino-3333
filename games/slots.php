@@ -385,8 +385,11 @@ include '../includes/header.php';
         isSpinning = true;
         document.getElementById('spinBtn').disabled = true;
 
-        // Deduct bet
-        await balanceManager.updateAfterGame(-betAmount);
+        // Show bet placed message
+        showToast(`You bet ${balanceManager.formatCurrency(betAmount)}`, 'info');
+
+        // Deduct bet (without showing message)
+        await balanceManager.updateAfterGame(-betAmount, false);
 
         // Play sound
         playSound('spin');
@@ -434,7 +437,10 @@ include '../includes/header.php';
         // Calculate winnings
         const winAmount = betAmount * multiplier;
         if (winAmount > 0) {
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
+            showToast(`You won ${balanceManager.formatCurrency(winAmount)}! (${multiplier}x)`, 'success');
+        } else {
+            showToast(`You lost ${balanceManager.formatCurrency(betAmount)}!`, 'error');
         }
 
         // Show result

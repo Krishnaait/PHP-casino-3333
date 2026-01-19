@@ -297,19 +297,21 @@ document.addEventListener('visibilitychange', function() {
 
 /**
  * Global error handler
+ * Commented out to prevent false positives
  */
-window.addEventListener('error', function(event) {
-    console.error('Global error:', event.error);
-    showToast('An error occurred. Please refresh the page.', 'error');
-});
+// window.addEventListener('error', function(event) {
+//     console.error('Global error:', event.error);
+//     showToast('An error occurred. Please refresh the page.', 'error');
+// });
 
 /**
  * Unhandled promise rejection
+ * Commented out to prevent false positives
  */
-window.addEventListener('unhandledrejection', function(event) {
-    console.error('Unhandled promise rejection:', event.reason);
-    showToast('An unexpected error occurred.', 'error');
-});
+// window.addEventListener('unhandledrejection', function(event) {
+//     console.error('Unhandled promise rejection:', event.reason);
+//     showToast('An unexpected error occurred.', 'error');
+// });
 
 // ============================================
 // PERFORMANCE MONITORING

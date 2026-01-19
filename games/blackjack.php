@@ -413,7 +413,10 @@ include '../includes/header.php';
         }
 
         betAmount = bet;
-        await balanceManager.updateAfterGame(-betAmount);
+        // Show bet placed message
+        showToast(`You bet ${balanceManager.formatCurrency(betAmount)}`, 'info');
+        // Deduct bet (without showing message)
+        await balanceManager.updateAfterGame(-betAmount, false);
 
         createDeck();
         dealerHand = [deck.pop(), deck.pop()];
@@ -514,7 +517,8 @@ include '../includes/header.php';
         }
 
         betAmount *= 2;
-        await balanceManager.updateAfterGame(-betAmount / 2);
+        showToast(`Doubled down! Total bet: ${balanceManager.formatCurrency(betAmount)}`, 'info');
+        await balanceManager.updateAfterGame(-betAmount / 2, false);
 
         playerHand.push(deck.pop());
         displayCards('playerCards', playerHand);
@@ -548,19 +552,22 @@ include '../includes/header.php';
             } else {
                 winAmount = betAmount * multiplier;
             }
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
             displayAmount = winAmount - betAmount; // Show profit
             playSound('win');
+            showToast(`You won ${balanceManager.formatCurrency(winAmount)}!`, 'success');
         } else if (result === 'push') {
             // Return bet
             winAmount = betAmount;
-            await balanceManager.updateAfterGame(winAmount);
+            await balanceManager.updateAfterGame(winAmount, false);
             displayAmount = 0; // No profit or loss
             playSound('click');
+            showToast(`Push! Your bet was returned.`, 'info');
         } else {
             // Lost - bet already deducted
             displayAmount = -betAmount;
             playSound('lose');
+            showToast(`You lost ${balanceManager.formatCurrency(betAmount)}!`, 'error');
         }
 
         const resultDisplay = document.getElementById('resultDisplay');
