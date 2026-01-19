@@ -1,334 +1,157 @@
 <?php
 $page_title = "About Us - Casino Ventures";
-include '../includes/header.php';
+$page_description = "Learn about Casino Ventures, our mission, values, and commitment to providing a 100% free-to-play social gaming platform with virtual currency only.";
+$page_keywords = "about us, casino ventures, social gaming, free casino, virtual currency";
+include_once __DIR__ . 
+'/../includes/header.php';
 ?>
 
-<style>
-    .about-container {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .about-header {
-        text-align: center;
-        margin-bottom: var(--spacing-2xl);
-    }
-
-    .about-header h1 {
-        color: var(--accent-green);
-        text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-        margin-bottom: var(--spacing-md);
-    }
-
-    .about-hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--spacing-2xl);
-        align-items: center;
-        margin-bottom: var(--spacing-2xl);
-        padding: var(--spacing-xl);
-        background: rgba(0, 255, 0, 0.05);
-        border: 2px solid var(--accent-green);
-        border-radius: var(--radius-lg);
-    }
-
-    .about-hero-text h2 {
-        color: var(--accent-gold);
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .about-hero-text p {
-        margin-bottom: var(--spacing-md);
-        line-height: 1.8;
-    }
-
-    .about-hero-icon {
-        font-size: 6rem;
-        text-align: center;
-        animation: float 3s infinite;
-    }
-
-    .mission-section {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-lg);
-        margin: var(--spacing-2xl) 0;
-    }
-
-    .mission-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-lg);
-        text-align: center;
-    }
-
-    .mission-card:hover {
-        border-color: var(--accent-green);
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-    }
-
-    .mission-icon {
-        font-size: 3rem;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .mission-title {
-        color: var(--accent-gold);
-        font-weight: 700;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .mission-text {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-    }
-
-    .values-section {
-        background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(255, 215, 0, 0.1));
-        border: 2px solid var(--accent-green);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-xl);
-        margin: var(--spacing-2xl) 0;
-    }
-
-    .values-section h2 {
-        color: var(--accent-green);
-        text-align: center;
-        margin-bottom: var(--spacing-xl);
-        text-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-    }
-
-    .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--spacing-lg);
-    }
-
-    .value-item {
-        text-align: center;
-    }
-
-    .value-item strong {
-        color: var(--accent-gold);
-        display: block;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .compliance-section {
-        background: rgba(255, 215, 0, 0.05);
-        border: 2px solid var(--accent-gold);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-xl);
-        margin: var(--spacing-2xl) 0;
-    }
-
-    .compliance-section h2 {
-        color: var(--accent-gold);
-        text-align: center;
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .compliance-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-lg);
-    }
-
-    .compliance-item {
-        display: flex;
-        gap: var(--spacing-md);
-    }
-
-    .compliance-item i {
-        color: var(--accent-green);
-        font-size: 1.3rem;
-        flex-shrink: 0;
-    }
-
-    .compliance-item-text {
-        color: var(--text-secondary);
-    }
-
-    .compliance-item-text strong {
-        color: var(--text-primary);
-    }
-
-    @media (max-width: 768px) {
-        .about-hero {
-            grid-template-columns: 1fr;
-        }
-
-        .about-hero-icon {
-            font-size: 4rem;
-        }
-
-        .mission-section {
-            grid-template-columns: 1fr;
-        }
-
-        .values-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-
-<div class="about-container">
-    <!-- Header -->
-    <div class="about-header">
-        <h1><i class="fas fa-info-circle"></i> About Casino Ventures</h1>
-        <p>Premium Free-to-Play Social Gaming Platform</p>
-    </div>
-
-    <!-- Hero Section -->
-    <div class="about-hero">
-        <div class="about-hero-text">
-            <h2>Our Story</h2>
-            <p>Casino Ventures was founded with a simple mission: to provide world-class casino gaming entertainment to everyone, completely free. We believe gaming should be accessible, fun, and responsible.</p>
-            <p>Our platform combines cutting-edge technology with classic casino games, creating an immersive experience that rivals premium gaming platforms—all without any real money involved.</p>
-            <p>We're committed to transparency, fairness, and responsible gaming practices. Every game is designed with integrity and tested for fairness.</p>
-        </div>
-        <div class="about-hero-icon">🎰</div>
-    </div>
-
-    <!-- Mission Section -->
-    <div class="mission-section">
-        <div class="mission-card">
-            <div class="mission-icon">🎯</div>
-            <div class="mission-title">Our Mission</div>
-            <div class="mission-text">
-                Provide premium casino gaming entertainment that is 100% free, safe, and accessible to everyone worldwide.
-            </div>
-        </div>
-        <div class="mission-card">
-            <div class="mission-icon">👥</div>
-            <div class="mission-title">Our Community</div>
-            <div class="mission-text">
-                Build a thriving community of gaming enthusiasts who value entertainment, fairness, and responsible gaming.
-            </div>
-        </div>
-        <div class="mission-card">
-            <div class="mission-icon">🏆</div>
-            <div class="mission-title">Our Excellence</div>
-            <div class="mission-text">
-                Deliver exceptional gaming experiences with innovative games, smooth gameplay, and outstanding customer support.
-            </div>
-        </div>
-    </div>
-
-    <!-- Values Section -->
-    <div class="values-section">
-        <h2><i class="fas fa-heart"></i> Our Core Values</h2>
-        <div class="values-grid">
-            <div class="value-item">
-                <strong>Transparency</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Complete honesty about our platform, games, and policies.</p>
-            </div>
-            <div class="value-item">
-                <strong>Fairness</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">All games use certified random number generators for true randomness.</p>
-            </div>
-            <div class="value-item">
-                <strong>Responsibility</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Promoting healthy gaming habits and responsible entertainment.</p>
-            </div>
-            <div class="value-item">
-                <strong>Innovation</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Continuously improving games and features based on player feedback.</p>
-            </div>
-            <div class="value-item">
-                <strong>Security</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Protecting player data and maintaining the highest security standards.</p>
-            </div>
-            <div class="value-item">
-                <strong>Community</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Building connections and fostering a positive gaming community.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Compliance Section -->
-    <div class="compliance-section">
-        <h2><i class="fas fa-shield-alt"></i> Compliance & Safety</h2>
-        <div class="compliance-list">
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                </div>
-            </div>
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                    <strong>18+ Age Verification</strong><br>
-                    Strict age verification to ensure only adults access our platform.
-                </div>
-            </div>
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                    <strong>No Real Money</strong><br>
-                    100% virtual currency with zero real-world value.
-                </div>
-            </div>
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                    <strong>Fair Gaming</strong><br>
-                    All games certified with published RTP and house edge percentages.
-                </div>
-            </div>
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                    <strong>Data Privacy</strong><br>
-                    Strict privacy policies protecting all player information.
-                </div>
-            </div>
-            <div class="compliance-item">
-                <i class="fas fa-check-circle"></i>
-                <div class="compliance-item-text">
-                    <strong>Responsible Gaming</strong><br>
-                    Resources and tools for maintaining healthy gaming habits.
+<div class="container-fluid bg-dark-gradient">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <div class="section-title mb-4">
+                    <i class="fas fa-info-circle fa-2x text-primary mb-3"></i>
+                    <h1>About Casino Ventures</h1>
+                    <p class="lead text-white-50">Premium Free-to-Play Social Gaming Platform</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Why Choose Us -->
-    <div style="background: rgba(0, 255, 0, 0.05); border: 2px solid var(--accent-green); border-radius: var(--radius-lg); padding: var(--spacing-xl); margin: var(--spacing-2xl) 0; text-align: center;">
-        <h2 style="color: var(--accent-green); margin-bottom: var(--spacing-lg);">Why Choose Casino Ventures?</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg);">
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">🎮</div>
-                <strong style="color: var(--accent-gold);">7+ Games</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Diverse selection of premium casino games</p>
-            </div>
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">💰</div>
-                <strong style="color: var(--accent-gold);">100% Free</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">No deposits, no payments, pure entertainment</p>
-            </div>
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">⚡</div>
-                <strong style="color: var(--accent-gold);">Instant Play</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">No registration required, start playing immediately</p>
-            </div>
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">🔒</div>
-                <strong style="color: var(--accent-gold);">Secure</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Bank-level security and data protection</p>
-            </div>
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">🎯</div>
-                <strong style="color: var(--accent-gold);">Fair</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Certified random number generators</p>
-            </div>
-            <div>
-                <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">🌍</div>
-                <strong style="color: var(--accent-gold);">Global</strong>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">Available worldwide, 24/7</p>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card bg-dark-2 text-white shadow-lg mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="text-primary mb-4">Our Story</h2>
+                        <p class="text-white-75">Casino Ventures was founded by a team of passionate gamers and technology enthusiasts with a simple yet ambitious mission: to provide world-class casino gaming entertainment to everyone, completely free. We believe that the thrill of casino games should be accessible to all, without the risks associated with real money gambling. Our journey began with the idea that a social gaming platform could offer the same excitement and high-quality experience as premium casinos, but in a safe, responsible, and 100% free-to-play environment.</p>
+                        <p class="text-white-75">Our platform combines cutting-edge technology with classic, beloved casino games, creating an immersive experience that rivals the best in the industry. From the moment you start playing, you’ll notice our commitment to quality, from the stunning graphics and smooth gameplay to the unique sound effects and engaging features. Every game is designed with integrity, tested for fairness, and built to provide endless entertainment. We are dedicated to transparency, fairness, and responsible gaming practices, ensuring that our community can enjoy a trustworthy and enjoyable gaming experience.</p>
+                        <img src="/assets/images/about-us-banner.png" class="img-fluid rounded my-4" alt="Casino Ventures Games">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
+                        <h3 class="text-primary">Our Mission</h3>
+                        <p class="text-white-75">To provide premium casino gaming entertainment that is 100% free, safe, and accessible to everyone worldwide, fostering a community built on fun and responsible play. We are committed to delivering a high-quality, immersive, and entertaining experience that respects our players and promotes a positive gaming culture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h3 class="text-primary">Our Community</h3>
+                        <p class="text-white-75">To build a thriving, positive community of gaming enthusiasts who value entertainment, fairness, and responsible gaming, where players can connect and share their experiences. We believe that a strong community is the heart of any great gaming platform, and we are dedicated to fostering an environment of respect and camaraderie.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-trophy fa-3x text-primary mb-3"></i>
+                        <h3 class="text-primary">Our Excellence</h3>
+                        <p class="text-white-75">To deliver exceptional gaming experiences with innovative games, seamless gameplay, and outstanding customer support, continuously pushing the boundaries of social gaming. We strive for excellence in every aspect of our platform, from the design of our games to the quality of our customer service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="card bg-dark-2 text-white shadow-lg">
+                    <div class="card-body p-5">
+                        <h2 class="text-primary mb-4">Our Core Values</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-eye text-primary me-2"></i> Transparency</h5>
+                                <p class="text-white-75">We believe in complete honesty and openness about our platform, games, and policies. Our players deserve to know how our games work, which is why we publish RTP rates and provide detailed game rules. We are committed to being upfront and clear in all our communications.</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-balance-scale text-primary me-2"></i> Fairness</h5>
+                                <p class="text-white-75">All our games use certified Random Number Generators (RNG) to ensure truly random and unpredictable outcomes. We are committed to providing a level playing field for all our users, and we regularly audit our games to ensure they meet the highest standards of fairness.</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-heartbeat text-primary me-2"></i> Responsibility</h5>
+                                <p class="text-white-75">We are dedicated to promoting healthy gaming habits and responsible entertainment. We provide tools and resources to help our players manage their playtime and enjoy our games safely. Our platform is designed for entertainment, and we encourage our players to play responsibly.</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-lightbulb text-primary me-2"></i> Innovation</h5>
+                                <p class="text-white-75">We are constantly exploring new ideas and technologies to enhance our games and features. We listen to player feedback and strive to deliver fresh and exciting content regularly. Our goal is to be at the forefront of the social gaming industry, offering our players the best possible experience.</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-shield-alt text-primary me-2"></i> Security</h5>
+                                <p class="text-white-75">Protecting our players’ data is a top priority. We employ bank-level security measures and strict data protection protocols to ensure a secure gaming environment. We are committed to safeguarding our players' privacy and providing a secure platform for them to enjoy.</p>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5><i class="fas fa-globe-americas text-primary me-2"></i> Community</h5>
+                                <p class="text-white-75">We aim to build more than just a gaming platform; we want to create a vibrant community where players can connect, share their passion for gaming, and feel a sense of belonging. We encourage interaction and feedback, and we are always looking for ways to improve our community experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="card bg-dark-2 text-white shadow-lg">
+                    <div class="card-body p-5">
+                        <h2 class="text-primary mb-4">Compliance & Safety</h2>
+                        <p class="text-white-75">We are committed to providing a safe and compliant gaming environment. Our platform adheres to the highest standards of player protection and responsible gaming. We take our legal and ethical responsibilities seriously, and we are dedicated to providing a platform that our players can trust.</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent text-white-75"><i class="fas fa-check-circle text-success me-2"></i><strong>18+ Age Verification:</strong> We have strict age verification protocols in place to ensure that only adults can access our platform. We are committed to preventing underage gaming and protecting vulnerable individuals.</li>
+                            <li class="list-group-item bg-transparent text-white-75"><i class="fas fa-check-circle text-success me-2"></i><strong>No Real Money:</strong> Our platform is 100% free-to-play. All currency is virtual and has no real-world value, ensuring a risk-free entertainment experience. We do not offer any real money prizes or rewards.</li>
+                            <li class="list-group-item bg-transparent text-white-75"><i class="fas fa-check-circle text-success me-2"></i><strong>Fair Gaming:</strong> All our games are certified with published Return to Player (RTP) and house edge percentages, guaranteeing fairness and transparency. We use industry-standard RNGs to ensure that all game outcomes are random and unbiased.</li>
+                            <li class="list-group-item bg-transparent text-white-75"><i class="fas fa-check-circle text-success me-2"></i><strong>Data Privacy:</strong> We adhere to strict privacy policies to protect all player information, using advanced encryption and security measures. We are committed to protecting our players' privacy and will never share their data with third parties without their consent.</li>
+                            <li class="list-group-item bg-transparent text-white-75"><i class="fas fa-check-circle text-success me-2"></i><strong>Responsible Gaming:</strong> We provide comprehensive resources and tools to help players maintain healthy gaming habits and enjoy our platform responsibly. We encourage our players to set limits, take breaks, and seek help if they feel they are developing a problem.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="text-primary mb-4">Why Choose Casino Ventures?</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                            <div class="card-body p-4">
+                                <i class="fas fa-gamepad fa-3x text-primary mb-3"></i>
+                                <h5>7+ Premium Games</h5>
+                                <p class="text-white-75">Enjoy a diverse selection of high-quality casino games, including Slots, Blackjack, Roulette, and more. Our games are designed to provide an authentic casino experience, with stunning graphics, realistic sound effects, and engaging gameplay.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                            <div class="card-body p-4">
+                                <i class="fas fa-coins fa-3x text-primary mb-3"></i>
+                                <h5>100% Free to Play</h5>
+                                <p class="text-white-75">Experience all the fun without any of the risk. No deposits, no payments, just pure entertainment. Our platform is completely free to use, and we will never ask you for money. We believe that everyone should have access to high-quality gaming entertainment, regardless of their financial situation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark-2 text-white h-100 shadow-lg">
+                            <div class="card-body p-4">
+                                <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
+                                <h5>Instant Play</h5>
+                                <p class="text-white-75">No registration or downloads required. Start playing your favorite games instantly in your browser. Our platform is designed for convenience, so you can start playing in seconds. Just visit our website, choose a game, and start playing. It's that simple.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include_once __DIR__ . 
+'/../includes/footer.php'; ?>

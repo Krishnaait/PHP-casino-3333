@@ -1,263 +1,67 @@
 <?php
 $page_title = "Privacy Policy - Casino Ventures";
-include '../includes/header.php';
+$page_description = "Read the official Privacy Policy for Casino Ventures. We are committed to protecting your privacy and handling your data with care.";
+$page_keywords = "privacy policy, legal, casino ventures, data protection";
+include_once __DIR__ . 
+'/../includes/header.php';
 ?>
 
-<style>
-    .legal-container {
-        padding: var(--spacing-xl) 0;
-        max-width: 900px;
-        margin: 0 auto;
-    }
+<div class="container-fluid bg-dark-gradient">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="section-title text-center mb-5">
+                    <i class="fas fa-user-secret fa-2x text-primary mb-3"></i>
+                    <h1>Privacy Policy</h1>
+                    <p class="lead text-white-50">Last Updated: <?php echo date("F j, Y"); ?></p>
+                </div>
 
-    .legal-header {
-        text-align: center;
-        margin-bottom: var(--spacing-2xl);
-        padding: var(--spacing-xl);
-        background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 255, 0.1));
-        border: 2px solid var(--accent-green);
-        border-radius: var(--radius-lg);
-    }
+                <div class="card bg-dark-2 text-white shadow-lg">
+                    <div class="card-body p-5">
+                        <p class="text-white-75">Casino Ventures is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose your information when you use our services. By using our platform, you agree to the collection and use of information in accordance with this policy.</p>
 
-    .legal-header h1 {
-        color: var(--accent-green);
-        text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-        margin-bottom: var(--spacing-md);
-    }
+                        <h4 class="text-primary mt-5">1. Information We Collect</h4>
+                        <p class="text-white-75">We may collect the following types of information:</p>
+                        <ul>
+                            <li class="text-white-75"><strong>Personal Information:</strong> We may collect personal information such as your name and email address if you choose to create an account or contact us.</li>
+                            <li class="text-white-75"><strong>Usage Data:</strong> We may collect information about your use of our services, such as your IP address, browser type, pages visited, and time spent on our platform.</li>
+                            <li class="text-white-75"><strong>Cookies:</strong> We use cookies to enhance your experience on our platform. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</li>
+                        </ul>
 
-    .legal-content {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-xl);
-    }
+                        <h4 class="text-primary mt-5">2. How We Use Your Information</h4>
+                        <p class="text-white-75">We use the information we collect for various purposes, including:</p>
+                        <ul>
+                            <li class="text-white-75">To provide and maintain our services</li>
+                            <li class="text-white-75">To improve our services and develop new features</li>
+                            <li class="text-white-75">To communicate with you and respond to your inquiries</li>
+                            <li class="text-white-75">To monitor the usage of our services and prevent fraud</li>
+                        </ul>
 
-    .legal-section {
-        margin-bottom: var(--spacing-xl);
-    }
+                        <h4 class="text-primary mt-5">3. Data Sharing and Disclosure</h4>
+                        <p class="text-white-75">We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this Privacy Policy. We may share your information with trusted third-party service providers who assist us in operating our platform, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.</p>
 
-    .legal-section h2 {
-        color: var(--accent-green);
-        margin-bottom: var(--spacing-lg);
-        padding-bottom: var(--spacing-md);
-        border-bottom: 2px solid var(--accent-green);
-        text-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
-    }
+                        <h4 class="text-primary mt-5">4. Data Security</h4>
+                        <p class="text-white-75">We take the security of your data seriously and use a variety of security measures to protect your information. However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
 
-    .legal-section h3 {
-        color: var(--accent-gold);
-        margin-top: var(--spacing-lg);
-        margin-bottom: var(--spacing-md);
-    }
+                        <h4 class="text-primary mt-5">5. Your Rights</h4>
+                        <p class="text-white-75">You have the right to access, update, or delete your personal information at any time. If you have an account with us, you can update your information in your account settings. If you would like to delete your account or have any other questions about your rights, please contact us.</p>
 
-    .legal-section p {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        margin-bottom: var(--spacing-md);
-    }
+                        <h4 class="text-primary mt-5">6. Children's Privacy</h4>
+                        <p class="text-white-75">Our services are not intended for anyone under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information from our servers.</p>
 
-    .legal-section ul {
-        color: var(--text-secondary);
-        margin-left: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
-        line-height: 1.8;
-    }
+                        <h4 class="text-primary mt-5">7. Changes to This Privacy Policy</h4>
+                        <p class="text-white-75">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
 
-    .legal-section li {
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .highlight-box {
-        background: rgba(0, 255, 0, 0.1);
-        border-left: 4px solid var(--accent-green);
-        padding: var(--spacing-lg);
-        margin: var(--spacing-lg) 0;
-        border-radius: var(--radius-md);
-    }
-
-    .last-updated {
-        text-align: center;
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        margin-top: var(--spacing-xl);
-        padding-top: var(--spacing-xl);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-</style>
-
-<div class="legal-container">
-    <!-- Header -->
-    <div class="legal-header">
-        <h1><i class="fas fa-lock"></i> Privacy Policy</h1>
-        <p>How we protect your privacy and data</p>
-    </div>
-
-    <!-- Content -->
-    <div class="legal-content">
-        <div class="legal-section">
-            <h2>1. Introduction</h2>
-            <p>Casino Ventures ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
-        </div>
-
-        <div class="legal-section">
-            <h2>2. Information We Collect</h2>
-            
-            <h3>Session-Based Information</h3>
-            <p>Since we do not require registration, we collect minimal information:</p>
-            <ul>
-                <li>Session ID (temporary, session-based)</li>
-                <li>Age verification status</li>
-                <li>Virtual currency balance</li>
-                <li>Game play history (current session only)</li>
-            </ul>
-
-            <h3>Technical Information</h3>
-            <p>We may collect:</p>
-            <ul>
-                <li>IP address</li>
-                <li>Browser type and version</li>
-                <li>Device information</li>
-                <li>Operating system</li>
-                <li>Referring URL</li>
-                <li>Pages visited and time spent</li>
-            </ul>
-
-            <h3>Contact Information</h3>
-            <p>If you contact us, we may collect:</p>
-            <ul>
-                <li>Name</li>
-                <li>Email address</li>
-                <li>Message content</li>
-                <li>Contact preferences</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>3. How We Use Your Information</h2>
-            <p>We use collected information for:</p>
-            <ul>
-                <li>Providing and maintaining our services</li>
-                <li>Processing your requests and inquiries</li>
-                <li>Improving our platform and user experience</li>
-                <li>Preventing fraud and ensuring security</li>
-                <li>Complying with legal obligations</li>
-                <li>Analyzing usage patterns and trends</li>
-                <li>Sending service-related announcements</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>4. Data Storage & Retention</h2>
-            <p>Session-based data is stored temporarily:</p>
-            <ul>
-                <li>Session data expires after inactivity</li>
-                <li>No permanent user accounts are created</li>
-                <li>Data is not retained after session ends</li>
-                <li>Contact form submissions are retained for support purposes</li>
-                <li>Technical logs are retained for security purposes</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>5. Data Security</h2>
-            <div class="highlight-box">
-                <p><strong>We implement industry-standard security measures:</strong></p>
+                        <h4 class="text-primary mt-5">8. Contact Us</h4>
+                        <p class="text-white-75">If you have any questions about this Privacy Policy, please contact us at <a href="mailto:<?php echo COMPANY_EMAIL; ?>"><?php echo COMPANY_EMAIL; ?></a>.</p>
+                        <p class="text-white-75"><strong>Address:</strong> <?php echo COMPANY_ADDRESS; ?></p>
+                        <p class="text-white-75"><strong>CIN:</strong> <?php echo COMPANY_CIN; ?> | <strong>GST:</strong> <?php echo COMPANY_GST; ?> | <strong>PAN:</strong> <?php echo COMPANY_PAN; ?></p>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li>SSL/TLS encryption for data transmission</li>
-                <li>Secure server infrastructure</li>
-                <li>Regular security audits</li>
-                <li>Firewalls and intrusion detection</li>
-                <li>Limited access to sensitive data</li>
-            </ul>
-            <p>However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
-        </div>
-
-        <div class="legal-section">
-            <h2>6. Cookies & Tracking</h2>
-            <p>We use minimal cookies and tracking:</p>
-            <ul>
-                <li>Session cookies for functionality</li>
-                <li>No persistent tracking cookies</li>
-                <li>No third-party cookies for advertising</li>
-                <li>You can disable cookies in your browser</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>7. Third-Party Services</h2>
-            <p>We may use third-party services for:</p>
-            <ul>
-                <li>Website hosting</li>
-                <li>Analytics (privacy-focused)</li>
-                <li>Payment processing (if applicable)</li>
-                <li>Customer support</li>
-            </ul>
-            <p>These services are bound by confidentiality agreements and are not permitted to use your information for other purposes.</p>
-        </div>
-
-        <div class="legal-section">
-            <h2>8. Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access information we hold about you</li>
-                <li>Request correction of inaccurate data</li>
-                <li>Request deletion of your data</li>
-                <li>Opt-out of communications</li>
-                <li>File a complaint with relevant authorities</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>9. Children's Privacy</h2>
-            <p>Casino Ventures is not intended for children under 18. We do not knowingly collect information from children. If we become aware that a child has provided us with personal information, we will delete such information immediately.</p>
-        </div>
-
-        <div class="legal-section">
-            <h2>10. GDPR Compliance</h2>
-            <p>For users in the European Union:</p>
-            <ul>
-                <li>We process data based on your consent</li>
-                <li>You have the right to access your data</li>
-                <li>You have the right to be forgotten</li>
-                <li>You have the right to data portability</li>
-                <li>You have the right to object to processing</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>11. CCPA Compliance</h2>
-            <p>For California residents:</p>
-            <ul>
-                <li>You have the right to know what data is collected</li>
-                <li>You have the right to delete collected data</li>
-                <li>You have the right to opt-out of data sales</li>
-                <li>You have the right to non-discrimination</li>
-            </ul>
-        </div>
-
-        <div class="legal-section">
-            <h2>12. Changes to Privacy Policy</h2>
-            <p>We may update this Privacy Policy at any time. Changes are effective immediately upon posting. Your continued use of Casino Ventures constitutes acceptance of the updated policy.</p>
-        </div>
-
-        <div class="legal-section">
-            <h2>13. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
-            <ul>
-                <li><strong>Email:</strong> contact@casinoventures.com</li>
-                <li><strong>Address:</strong> C/O 58585 IEKEEN 20-0RHUSC, SEC-23A, Shivaji Nagar (Gurgaon), RAJEEV CHOWK, Gurgaon- 122001, Haryana</li>
-                <li><strong>CIN:</strong> FIUGB4Y49595T8</li>
-                <li><strong>GST:</strong> 7K99TDC34734</li>
-                <li><strong>PAN:</strong> 098JBKC3252</li>
-            </ul>
-        </div>
-
-        <div class="last-updated">
-            <p>Last Updated: January 2026</p>
-            <p>This Privacy Policy is effective as of the date above and applies to all users of Casino Ventures.</p>
         </div>
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include_once __DIR__ . 
+'/../includes/footer.php'; ?>
