@@ -352,7 +352,7 @@ include '../includes/header.php';
                 🥚 Each egg increases multiplier<br>
                 🦴 Avoid bones or lose<br>
                 💰 Cash out anytime to win<br>
-                📈 Higher difficulty = bigger rewards
+                📈 Higher difficulty = higher multipliers
             </p>
         </div>
     </div>

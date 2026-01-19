@@ -349,7 +349,7 @@ include '../includes/header.php';
                 💣 Avoid mines<br>
                 📈 Each safe tile increases multiplier<br>
                 💰 Cash out anytime to win<br>
-                🎯 More mines = bigger rewards
+                🎯 More mines = higher multipliers
             </p>
         </div>
     </div>

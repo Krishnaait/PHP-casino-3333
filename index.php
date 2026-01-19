@@ -112,85 +112,6 @@ include 'includes/header.php';
         font-weight: 600;
     }
 
-    /* Latest Winners Section */
-    .winners-section {
-        margin: var(--spacing-2xl) 0;
-        padding: var(--spacing-xl);
-        background: rgba(0, 255, 0, 0.05);
-        border: 2px solid var(--accent-green);
-        border-radius: var(--radius-lg);
-        position: relative;
-    }
-
-    .winners-section::before {
-        content: '🏆';
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 3rem;
-        background: var(--primary-dark);
-        padding: var(--spacing-sm);
-        border-radius: 50%;
-        border: 2px solid var(--accent-green);
-    }
-
-    .winners-section h2 {
-        text-align: center;
-        color: var(--accent-green);
-        margin-bottom: var(--spacing-xl);
-        text-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-        font-size: 2rem;
-    }
-
-    .winners-carousel {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--spacing-lg);
-        overflow-x: auto;
-        padding-bottom: var(--spacing-md);
-    }
-
-    .winner-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--accent-gold);
-        border-radius: var(--radius-lg);
-        padding: var(--spacing-lg);
-        text-align: center;
-        transition: all var(--transition-normal);
-    }
-
-    .winner-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        border-color: var(--accent-green);
-    }
-
-    .winner-avatar {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin: 0 auto var(--spacing-md);
-        font-size: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, var(--accent-gold), #ffed4e);
-        border: 3px solid var(--accent-green);
-    }
-
-    .winner-name {
-        font-weight: 700;
-        color: var(--text-primary);
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .winner-amount {
-        color: var(--accent-gold);
-        font-size: 1.3rem;
-        font-weight: 800;
-    }
-
     /* Featured Games Section */
     .games-section {
         margin: var(--spacing-2xl) 0;
@@ -386,38 +307,6 @@ include 'includes/header.php';
         <img src="/assets/images/coin-stack.png" alt="Coin" class="floating-element floating-coin-2">
         <img src="/assets/images/coin-stack.png" alt="Coin" class="floating-element floating-coin-3">
         <img src="/assets/images/coin-stack.png" alt="Coin" class="floating-element floating-coin-4">
-    </div>
-</section>
-
-<!-- Latest Winners Section -->
-<section class="winners-section">
-    <h2>Latest Winners</h2>
-    <div class="winners-carousel">
-        <div class="winner-card">
-            <div class="winner-avatar">👤</div>
-            <div class="winner-name">Player Alpha</div>
-            <div class="winner-amount">+₹2,450</div>
-        </div>
-        <div class="winner-card">
-            <div class="winner-avatar">👥</div>
-            <div class="winner-name">Player Beta</div>
-            <div class="winner-amount">+₹1,850</div>
-        </div>
-        <div class="winner-card">
-            <div class="winner-avatar">🎯</div>
-            <div class="winner-name">Player Gamma</div>
-            <div class="winner-amount">+₹3,200</div>
-        </div>
-        <div class="winner-card">
-            <div class="winner-avatar">🏆</div>
-            <div class="winner-name">Player Delta</div>
-            <div class="winner-amount">+₹5,500</div>
-        </div>
-        <div class="winner-card">
-            <div class="winner-avatar">⚡</div>
-            <div class="winner-name">Player Epsilon</div>
-            <div class="winner-amount">+₹2,100</div>
-        </div>
     </div>
 </section>
 

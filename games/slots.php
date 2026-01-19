@@ -342,7 +342,7 @@ include '../includes/header.php';
         </div>
 
         <div class="stats-card">
-            <div class="stats-title"><i class="fas fa-star"></i> Payouts</div>
+            <div class="stats-title"><i class="fas fa-star"></i> Multipliers</div>
             <div class="stat-row">
                 <span>3 Match</span>
                 <span class="stat-value">5x</span>

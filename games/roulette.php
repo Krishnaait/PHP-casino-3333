@@ -282,7 +282,7 @@ include '../includes/header.php';
         </div>
 
         <div class="stats-card">
-            <div class="stats-title"><i class="fas fa-star"></i> Payouts</div>
+            <div class="stats-title"><i class="fas fa-star"></i> Multipliers</div>
             <div class="stat-row">
                 <span>Red/Black</span>
                 <span class="stat-value">2x</span>

@@ -304,7 +304,7 @@ include '../includes/header.php';
                 <div class="game-features">
                     <div class="game-feature">
                         <i class="fas fa-check"></i>
-                        <span>Risk vs Reward</span>
+                        <span>Strategic Gameplay</span>
                     </div>
                     <div class="game-feature">
                         <i class="fas fa-check"></i>
