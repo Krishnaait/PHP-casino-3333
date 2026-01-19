@@ -422,12 +422,12 @@ include '../includes/header.php';
         constructor(startX) {
             this.x = startX;
             this.y = 20;
-            this.vx = (Math.random() - 0.5) * 1; // Reduced initial horizontal velocity
+            this.vx = (Math.random() - 0.5) * 0.5; // Very slow initial horizontal velocity
             this.vy = 0;
-            this.radius = 10; // Slightly larger ball for better visibility
-            this.gravity = 0.3; // Reduced gravity for slower fall
-            this.bounce = 0.6; // Slightly less bouncy
-            this.friction = 0.98; // More friction for smoother movement
+            this.radius = 12; // Larger ball for better visibility
+            this.gravity = 0.2; // Much slower gravity for dramatic fall
+            this.bounce = 0.5; // Less bouncy for smoother animation
+            this.friction = 0.96; // High friction for controlled movement
         }
         
         update() {
@@ -457,11 +457,11 @@ include '../includes/header.php';
                     const ax = targetX - this.x;
                     const ay = targetY - this.y;
                     
-                    this.vx -= ax * 0.4;
-                    this.vy -= ay * 0.4;
+                    this.vx -= ax * 0.3;
+                    this.vy -= ay * 0.3;
                     
-                    // Add some randomness (reduced for smoother animation)
-                    this.vx += (Math.random() - 0.5) * 1.5;
+                    // Add minimal randomness for smooth but varied animation
+                    this.vx += (Math.random() - 0.5) * 1.0;
                     
                     // Move ball out of collision
                     this.x = targetX;
